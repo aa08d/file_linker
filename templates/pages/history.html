@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>FileLinker</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/history.css') }}">
+</head>
+<body class="page">
+	<main class="content">
+		<a href="#" class="back-button" onclick="history.back(); return false;" aria-label="Вернуться назад">
+			<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+				<path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+			Назад
+		</a>
+		<section class="history">
+			<table 
+			aria-label="Таблица с копированием содержимого последней колонки" 
+			class="history__table"
+			>
+				<thead class="history__table-header">
+					<tr class="history__table-row">
+						<th class="history__column-title">ID</th>
+						<th class="history__column-title">Срок хранения до:</th>
+						<th class="history__column-title">Ссылка</th>
+					</tr>
+				</thead>
+				<tbody class="history__table-content">
+					{% for m in media %}
+						<tr class="history__table-row">
+							<td tabindex="-1" class="history__table-cell">
+								{{ m.id }}
+							</td>
+							<td tabindex="-1" class="history__table-cell">
+								{{ m.expire }}
+							</td>
+							<td tabindex="0" class="history__table-cell">
+								{{ m.link }}
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</section>
+	</main>
+	<script src="{{ url_for('static', filename='scripts/pages/history.js') }}">
+	</script>
+</body>
+</html>

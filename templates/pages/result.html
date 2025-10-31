@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block styles%} 
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/components/header.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/result.css') }}">
+{% endblock  %}
+
+{% block content%} 
+	<section class="content__section-copylink">
+		<h2 class="content__section-title">Ваша ссылка для загрузки</h2>
+		<div class="content__link-container">
+			<input
+				type="text"
+				readonly
+				value="{{ link }}"
+				class="content__link-input"
+				id="copyLinkInput"
+			/>
+			<button
+				class="content__copy-button"
+				onclick="copyLink()"
+				aria-label="Копировать ссылку"
+				type="button"
+			>
+				Копировать
+			</button>
+		</div>
+	</section>
+{% endblock  %}
+
+{% block scripts %}
+	<script src="{{ url_for('static', filename='scripts/pages/result.js') }}">
+	</script>
+{% endblock  %}

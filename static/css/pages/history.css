@@ -1,0 +1,47 @@
+.page {
+	font-family: Arial, sans-serif;
+	padding: 20px;
+	background: #f5f7fa;
+}
+.back-button {
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 15px;
+	text-decoration: none;
+	color: #4a90e2;
+	font-weight: 600;
+	cursor: pointer;
+	user-select: none;
+}
+
+.back-button:hover {
+	text-decoration: underline;
+	color: #357abd;
+}
+.back-button svg {
+	margin-right: 6px;
+	width: 16px;
+	height: 16px;
+	fill: currentColor;
+}
+
+.history__table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	cursor: default;
+	user-select: none;
+}
+.history__column-title, 
+.history__table-cell {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.history__table-content tr:hover td:last-child {
+	cursor: pointer;
+	background-color: #f0f8ff;
+}
